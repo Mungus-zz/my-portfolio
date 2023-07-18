@@ -1,28 +1,16 @@
-import { Link, Element } from 'react-scroll';
-
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import Scene from './components/Scene';
 
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <Element name="home">
-        <Home />
-      </Element>
-      <Element name="about">
-        <About />
-      </Element>
-      <Element name="projects">
-        <Projects />
-      </Element>
-      <Element name="contact">
-        <Contact />
-      </Element>
-    </>
+    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
+      <Canvas style={{ width: '100%', height: '100%' }}>
+        <Suspense fallback={null}>
+          <Scene />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
 
