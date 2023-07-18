@@ -9,7 +9,8 @@ const Html: React.FC = () => {
           top: '50vh',
           left: '50vw',
           transform: 'translateX(-50%)',
-          color: '#292828'
+          color: '#020403',
+          fontSize: 'calc(1em + 1vw)'  // Minimum size of 1em, scales with viewport width
         }}>
         hi.
       </h1>
@@ -19,7 +20,8 @@ const Html: React.FC = () => {
           top: '140vh',
           left: '50vw',
           transform: 'translateX(-65%)',
-          color: '#f4b677'
+          color: '#020403',
+          fontSize: 'calc(1em + 1vw)'  // Minimum size of 1em, scales with viewport width
         }}>
         I'm Erwin
       </h1>
@@ -29,7 +31,8 @@ const Html: React.FC = () => {
           top: '250vh',
           left: '50vw',
           transform: 'translateX(-50%)',
-          color: '#673ab7'
+          color: '#020403',
+          fontSize: 'calc(1em + 1vw)'  // Minimum size of 1em, scales with viewport width
         }}>
         Welcome to my portfolio
       </h1>
