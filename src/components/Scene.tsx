@@ -1,10 +1,11 @@
-import { Scroll, ScrollControls } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import React from 'react';
 import * as THREE from 'three';
 import Html from './html';
-import Objects from './Objects';
+import { Scroll, ScrollControls } from '@react-three/drei';
 import Particles from './Particles';
+import Objects from './Objects';
+import { Model } from './ErwinModelBlender'; 
 
 const Scene: React.FC = () => {
   useFrame(({ mouse, camera }) => {
@@ -17,8 +18,11 @@ const Scene: React.FC = () => {
   return (
     <ScrollControls pages={3}>
       <Scroll>
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 10]} />
         <Particles />
         <Objects />
+        <Model scale={[1, 1, 1]} position={[0, 0, 0]} />
       </Scroll>
       <Scroll html>
         <Html />

@@ -10,7 +10,7 @@ const Objects: React.FC = () => {
     <>
       <pointLight color="blue" position={[8, -25, 5]} intensity={20} />
       <pointLight color="red" position={[0, -height * 2.25, 5]} intensity={10} />
-      <Item color="red" position={[0, 1, 0]}>
+      <Item color="red" position={[2, 1, 1]}>
         <boxGeometry />
       </Item>
       <Item color="blue" position={[width / 6, -height * 1, 0]}>

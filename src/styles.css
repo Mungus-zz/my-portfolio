@@ -13,7 +13,7 @@
   }
   
   body {
-    background: white;
+    background: lightgrey;
     font-family: sans-serif;
     font-size: min(12vw, 86px);
     line-height: 0.75;
