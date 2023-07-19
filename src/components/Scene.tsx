@@ -5,7 +5,7 @@ import Html from './html';
 import { Scroll, ScrollControls } from '@react-three/drei';
 import Particles from './Particles';
 import Objects from './Objects';
-import { Model } from './ErwinModelBlender'; 
+import { Model } from './ErwinModel'; 
 
 const Scene: React.FC = () => {
   useFrame(({ mouse, camera }) => {
