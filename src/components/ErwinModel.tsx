@@ -2,6 +2,8 @@ import * as THREE from 'three'
 import { useRef, useEffect } from 'react'
 import { useGLTF, useFBX, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
+import { OrbitControls } from '@react-three/drei'
+
 
 useGLTF.preload('models/ErwinModel.glb')
 
@@ -19,17 +21,13 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>(new THREE.Group())
   const { nodes, materials } = useGLTF('models/ErwinModel.glb') as GLTFResult
 
-  const fbx = useFBX('/animations/FallingWithSkin.fbx')
-  console.log('FBX:', fbx)  // Let's log the FBX object to see its contents
+  const fbx = useFBX('/animations/BreakdanceFreeze.fbx')
 
   const { animations } = fbx as any
-  console.log('Animations:', animations)  // Let's log the animations to see their contents
 
   const { actions } = useAnimations(animations, group)
-  console.log('Actions:', actions)  // Let's log the actions to see their contents
 
   useEffect(() => {
-    console.log('Playing action:', actions['mixamo.com'])  // Let's log the action we are trying to play
     actions['mixamo.com']?.play()
 
     group.current.traverse((object) => {
@@ -41,6 +39,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     <group ref={group} {...props} dispose={null}>
       <primitive object={nodes.Hips} />
       <skinnedMesh name="Wolf3D_Avatar" geometry={nodes.Wolf3D_Avatar.geometry} material={materials.Wolf3D_Avatar} skeleton={nodes.Wolf3D_Avatar.skeleton} morphTargetDictionary={nodes.Wolf3D_Avatar.morphTargetDictionary} morphTargetInfluences={nodes.Wolf3D_Avatar.morphTargetInfluences} />
+      <OrbitControls enableZoom={false} enablePan={false} />
     </group>
   )
 }
